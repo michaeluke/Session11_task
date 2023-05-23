@@ -23,6 +23,8 @@ $(document).ready(function(){
        
         $("#submit_btn").bind('click',function($event){
         
+
+            
             debugger
             $event.preventDefault(); //or each time the script is loaded take the data value from the  local storage..
             var title = $("#platform");
@@ -40,6 +42,12 @@ $(document).ready(function(){
          
             var type = type_.val();
 
+            if (email== "" || number=="" || type=="") {
+                alert("Please fill in all the input fields");
+                debugger
+                return false; // Prevent form submission
+                
+              }
 
             
             var object ={name: platform,email: email, num: number,type : type}
